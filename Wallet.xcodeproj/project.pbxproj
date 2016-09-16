@@ -14,6 +14,7 @@
 		CF8A95F61D8C602600B2B2EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF8A95F41D8C602600B2B2EF /* LaunchScreen.storyboard */; };
 		CF8A96011D8C602600B2B2EF /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8A96001D8C602600B2B2EF /* WalletTests.swift */; };
 		CF8A960C1D8C602600B2B2EF /* WalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8A960B1D8C602600B2B2EF /* WalletUITests.swift */; };
+		CF8A961B1D8C603800B2B2EF /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8A961A1D8C603800B2B2EF /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CF8A96071D8C602600B2B2EF /* WalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8A960B1D8C602600B2B2EF /* WalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletUITests.swift; sourceTree = "<group>"; };
 		CF8A960D1D8C602600B2B2EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF8A961A1D8C603800B2B2EF /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Models/Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		CF8A95EA1D8C602600B2B2EF /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				CF8A96191D8C602C00B2B2EF /* Models */,
 				CF8A95EB1D8C602600B2B2EF /* AppDelegate.swift */,
 				CF8A95ED1D8C602600B2B2EF /* ViewController.swift */,
 				CF8A95EF1D8C602600B2B2EF /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				CF8A960D1D8C602600B2B2EF /* Info.plist */,
 			);
 			path = WalletUITests;
+			sourceTree = "<group>";
+		};
+		CF8A96191D8C602C00B2B2EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF8A961A1D8C603800B2B2EF /* Entry.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF8A961B1D8C603800B2B2EF /* Entry.swift in Sources */,
 				CF8A95EE1D8C602600B2B2EF /* ViewController.swift in Sources */,
 				CF8A95EC1D8C602600B2B2EF /* AppDelegate.swift in Sources */,
 			);

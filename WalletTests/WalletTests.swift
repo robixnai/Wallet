@@ -21,15 +21,38 @@ class WalletTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // TEST A VALID DATE / MONTH AND VALUE
+    func testValidEntry() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let someDateTime = formatter.date(from: "2016/08/16")!
+        
+        if let entry = Entry(totalValue: 869, numberOfmonths: 10, creationDate: someDateTime) {
+            XCTAssert(entry.value == entry.paidValue + entry.remainingValue)
+            XCTAssert(entry.value == entry.valueByMonth * Double(entry.months))
+            XCTAssert(entry.months == entry.remainingMonths + Int(entry.paidValue / entry.value * 10))
+        }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    // TEST A INVALID DATE
+    func testInvalidDateEntry() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let someDateTime = formatter.date(from: "2016/12/16")!
+        XCTAssertNil(Entry(totalValue: 869, numberOfmonths: 10, creationDate: someDateTime))
+    }
+    
+    // TEST OLD DATE
+    func testOldDateEntry() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let someDateTime = formatter.date(from: "2015/08/16")!
+        
+        if let entry = Entry(totalValue: 869, numberOfmonths: 10, creationDate: someDateTime) {
+            XCTAssert(entry.isFullyPaid)
+            XCTAssert(entry.remainingValue == 0)
+            XCTAssert(entry.remainingMonths == 0)
+            XCTAssert(entry.paidValue == entry.value)
         }
     }
     
